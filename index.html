@@ -3,23 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Перенаправление на Example.com</title>
+    <title>Сообщение на сайте</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <script>
         // Задаем обязательный параметр
-        const requiredParam = '12qwerpou124elhweqrdfhpq1235rf33qhgty423hg321jh3gj12g3j1g4129wsedf6816234bh0fq3ghwrl23rfj32rqklejrf';
+        const requiredParam = '12qwerpou124elhweqrdfhpq1235rffg43ytg3w4eryghw2e34hy23ew4yhg2w3e4yghy2we3yhgrfw4uht64rujedruhjwsxdfhy2wsed34yhw33qhgty4230fq3ghwrl23rfj32rqklejrf';
         
         // Получаем параметры из URL
         const params = new URLSearchParams(window.location.search);
         
         // Проверяем наличие обязательного параметра
         if (params.has(requiredParam)) {
-            // Если параметр есть, перенаправляем на example.com
-            window.location.href = "https://example.com";
+            // Если параметр есть, показываем информацию
+            document.body.innerHTML = `
+                <h1>Расходы на поездку в Новосибирск</h1>
+                <ol>
+                    <li>Авиабилеты туда и обратно:
+                        <ul>
+                            <li>Средняя стоимость авиабилетов на прямые рейсы составляет от 11,656 до 13,970 рублей за перелет туда и обратно. Источник: <a href="https://www.aviasales.ru">Aviasales</a> и <a href="https://uniticket.ru">UniTicket</a>.</li>
+                        </ul>
+                    </li>
+                    <li>Аренда жилья:
+                        <ul>
+                            <li>Средняя стоимость аренды квартир за неделю в Новосибирске варьируется от 35,000 до 56,000 рублей, в зависимости от района и условий. Источник: <a href="https://onrealt.ru">OnRealt</a> и <a href="https://novosibirsk.cian.ru">CIAN</a>.</li>
+                        </ul>
+                    </li>
+                    <li>Развлечения:
+                        <ul>
+                            <li>Зоопарк Новосибирска: 500 рублей.</li>
+                            <li>Музей "Сибирская берлога": 400 рублей.</li>
+                            <li>Прогулка на катере по реке Обь: 1000 рублей. Итого: 1900 рублей. Источник: <a href="https://nskzoo.ru">nсkzoo.ru</a>.</li>
+                        </ul>
+                    </li>
+                    <li>Рестораны:
+                        <ul>
+                            <li>Средний чек в ресторане: 1000-1500 рублей за приём пищи. На 3 приёма пищи в день в течение недели — около 21,000 рублей. Источник: <a href="https://restonovosib.ru">restonovosib.ru</a>.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>Итоговая сумма: около 70,900 рублей на 7 дней.</p>
+            `;
         } else {
             // Если параметра нет, выводим сообщение об ошибке
-            document.body.innerHTML = '<h1>Ошибка!</h1><p>Недостаточно параметров для доступа к сайту.</p>';
+            document.body.innerHTML = '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
         }
     </script>
 </body>
