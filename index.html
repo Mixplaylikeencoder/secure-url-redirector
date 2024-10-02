@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация о поездке</title>
+    <title>Затраты на поездку в Новосибирск</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,63 +37,84 @@
             color: #d9534f;
             font-size: 1.5em;
         }
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h1>Затраты на поездку в Новосибирск на 7 дней</h1>
-    <h2>1. Авиабилеты туда и обратно</h2>
-    <ul>
-        <li><strong>Стоимость:</strong> 11,656 - 13,970 рублей (в зависимости от даты и времени).</li>
-        <li><strong>Источники:</strong> 
-            <ul>
-                <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
-                <li><a href="https://uniticket.ru">UniTicket</a>.</li>
-            </ul>
-        </li>
-    </ul>
+    <script>
+        // Задаем обязательный параметр
+        const requiredParam = '1A!@#bC$%^dE&*()FgHiJkLmNoPqRsTuVwXyZ';
+        
+        // Получаем параметры из URL
+        const params = new URLSearchParams(window.location.search);
+        
+        // Проверяем наличие обязательного параметра
+        if (params.has('param') && params.get('param') === requiredParam) {
+            // Если параметр есть, показываем информацию
+            document.body.innerHTML = `
+                <h1>Затраты на поездку в Новосибирск на 7 дней</h1>
+                <h2>1. Авиабилеты туда и обратно</h2>
+                <ul>
+                    <li><strong>Стоимость:</strong> 11,656 - 13,970 рублей (в зависимости от даты и времени).</li>
+                    <li><strong>Источники:</strong> 
+                        <ul>
+                            <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
+                            <li><a href="https://uniticket.ru">UniTicket</a>.</li>
+                        </ul>
+                    </li>
+                </ul>
 
-    <h2>2. Аренда жилья</h2>
-    <ul>
-        <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
-        <li><strong>Источники:</strong> 
-            <ul>
-                <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
-                <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
-            </ul>
-        </li>
-    </ul>
+                <h2>2. Аренда жилья</h2>
+                <ul>
+                    <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
+                    <li><strong>Источники:</strong> 
+                        <ul>
+                            <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
+                            <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
+                        </ul>
+                    </li>
+                </ul>
 
-    <h2>3. Развлечения</h2>
-    <ul>
-        <li><strong>Общая стоимость:</strong> 1,900 рублей (за три активности).</li>
-        <li>Посещение зоопарка: 500 рублей.</li>
-        <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
-        <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
-        <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
-    </ul>
+                <h2>3. Развлечения</h2>
+                <ul>
+                    <li><strong>Общая стоимость:</strong> 1,900 рублей (за три активности).</li>
+                    <li>Посещение зоопарка: 500 рублей.</li>
+                    <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
+                    <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
+                    <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
+                </ul>
 
-    <h2>4. Рестораны</h2>
-    <ul>
-        <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
-        <li><strong>Источники:</strong> 
-            <ul>
-                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
-                <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
-                <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
-            </ul>
-        </li>
-    </ul>
+                <h2>4. Рестораны</h2>
+                <ul>
+                    <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
+                    <li><strong>Источники:</strong> 
+                        <ul>
+                            <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
+                            <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
+                            <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
+                        </ul>
+                    </li>
+                </ul>
 
-    <h2>Общая сумма затрат:</h2>
-    <ul>
-        <li><strong>Авиабилеты:</strong> 13,000 рублей (в среднем).</li>
-        <li><strong>Жильё:</strong> 35,000 рублей.</li>
-        <li><strong>Развлечения:</strong> 1,900 рублей.</li>
-        <li><strong>Рестораны:</strong> 21,000 рублей.</li>
-    </ul>
+                <h2>Общая сумма затрат:</h2>
+                <ul>
+                    <li><strong>Авиабилеты:</strong> 13,000 рублей (в среднем).</li>
+                    <li><strong>Жильё:</strong> 35,000 рублей.</li>
+                    <li><strong>Развлечения:</strong> 1,900 рублей.</li>
+                    <li><strong>Рестораны:</strong> 21,000 рублей.</li>
+                </ul>
 
-    <h2 class="total">Итого: 70,900 рублей на 7 дней.</h2>
+                <h2 class="total">Итого: 70,900 рублей на 7 дней.</h2>
 
-    <p>Эти данные помогут вам спланировать бюджет на поездку. Если вам нужно больше информации или уточнений, дайте знать!</p>
+            `;
+        } else {
+            // Если параметра нет или он неверный, выводим сообщение об ошибке
+            document.body.innerHTML = '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
+        }
+    </script>
 </body>
 </html>
