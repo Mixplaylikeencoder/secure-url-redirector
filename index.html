@@ -3,23 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сообщение на сайте</title>
+    <title>Затраты на поездку в Новосибирск</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .total {
+            font-weight: bold;
+            color: #d9534f;
+            font-size: 1.5em;
         }
         .error {
             color: red;
             font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <script>
         // Задаем обязательный параметр
-        const requiredParam = '12qwerpou124elhweqrdfhpq1235rffg43ytg3w4eryghw2e34hy23ew4yhg2w3e4yghy2we3yhgrfw4uht64rujedruhjwsxdfhy2wsed34yhw33qhgty4230fq3ghwrl23rfj32rqklejrf';
+        const requiredParam = '12qwerpou124elhweqrdfhpq1235rf33qhgty4230fq3ghwrl23rfj32rqklejrf';
         
         // Получаем параметры из URL
         const params = new URLSearchParams(window.location.search);
@@ -28,32 +56,61 @@
         if (params.has(requiredParam)) {
             // Если параметр есть, показываем информацию
             document.body.innerHTML = `
-                <h1>Расходы на поездку в Новосибирск</h1>
-                <ol>
-                    <li>Авиабилеты туда и обратно:
+                <h1>Затраты на поездку в Новосибирск на 7 дней</h1>
+                <h2>1. Авиабилеты туда и обратно</h2>
+                <ul>
+                    <li><strong>Стоимость:</strong> 11,656 - 13,970 рублей (в зависимости от даты и времени).</li>
+                    <li><strong>Источники:</strong> 
                         <ul>
-                            <li>Средняя стоимость авиабилетов на прямые рейсы составляет от 11,656 до 13,970 рублей за перелет туда и обратно. Источник: <a href="https://www.aviasales.ru">Aviasales</a> и <a href="https://uniticket.ru">UniTicket</a>.</li>
+                            <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
+                            <li><a href="https://uniticket.ru">UniTicket</a>.</li>
                         </ul>
                     </li>
-                    <li>Аренда жилья:
+                </ul>
+
+                <h2>2. Аренда жилья</h2>
+                <ul>
+                    <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
+                    <li><strong>Источники:</strong> 
                         <ul>
-                            <li>Средняя стоимость аренды квартир за неделю в Новосибирске варьируется от 35,000 до 56,000 рублей, в зависимости от района и условий. Источник: <a href="https://onrealt.ru">OnRealt</a> и <a href="https://novosibirsk.cian.ru">CIAN</a>.</li>
+                            <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
+                            <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
                         </ul>
                     </li>
-                    <li>Развлечения:
+                </ul>
+
+                <h2>3. Развлечения</h2>
+                <ul>
+                    <li><strong>Общая стоимость:</strong> 1,900 рублей (за три активности).</li>
+                    <li>Посещение зоопарка: 500 рублей.</li>
+                    <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
+                    <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
+                    <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
+                </ul>
+
+                <h2>4. Рестораны</h2>
+                <ul>
+                    <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
+                    <li><strong>Источники:</strong> 
                         <ul>
-                            <li>Зоопарк Новосибирска: 500 рублей.</li>
-                            <li>Музей "Сибирская берлога": 400 рублей.</li>
-                            <li>Прогулка на катере по реке Обь: 1000 рублей. Итого: 1900 рублей. Источник: <a href="https://nskzoo.ru">nсkzoo.ru</a>.</li>
+                            <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
+                            <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
+                            <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
                         </ul>
                     </li>
-                    <li>Рестораны:
-                        <ul>
-                            <li>Средний чек в ресторане: 1000-1500 рублей за приём пищи. На 3 приёма пищи в день в течение недели — около 21,000 рублей. Источник: <a href="https://restonovosib.ru">restonovosib.ru</a>.</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>Итоговая сумма: около 70,900 рублей на 7 дней.</p>
+                </ul>
+
+                <h2>Общая сумма затрат:</h2>
+                <ul>
+                    <li><strong>Авиабилеты:</strong> 13,000 рублей (в среднем).</li>
+                    <li><strong>Жильё:</strong> 35,000 рублей.</li>
+                    <li><strong>Развлечения:</strong> 1,900 рублей.</li>
+                    <li><strong>Рестораны:</strong> 21,000 рублей.</li>
+                </ul>
+
+                <h2 class="total">Итого: 70,900 рублей на 7 дней.</h2>
+
+                <p>Эти данные помогут вам спланировать бюджет на поездку. Если вам нужно больше информации или уточнений, дайте знать!</p>
             `;
         } else {
             // Если параметра нет, выводим сообщение об ошибке
