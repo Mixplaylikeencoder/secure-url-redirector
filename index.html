@@ -8,17 +8,25 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
             padding: 20px;
-            background-color: #f4f4f4;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         h1 {
-            text-align: center;
-            color: #333;
+            margin: 0;
+            font-size: 2.5em;
         }
         h2 {
-            color: #555;
-            border-bottom: 2px solid #333;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
             padding-bottom: 5px;
+            margin-top: 20px;
         }
         ul {
             margin: 0;
@@ -26,9 +34,9 @@
             list-style-type: none;
         }
         li {
-            background: #fff;
+            background: #ffffff;
             margin: 10px 0;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -41,80 +49,106 @@
             color: red;
             font-weight: bold;
             text-align: center;
+            font-size: 1.5em;
+            margin-top: 50px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            background-color: #f1f1f1;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-    <script>
-        // Задаем обязательный параметр
-        const requiredParam = '1A!@#bC$%^dE&*()FgHiJkLmNoPqRsTuVwXyZ';
-        
-        // Получаем параметры из URL
-        const params = new URLSearchParams(window.location.search);
-        
-        // Проверяем наличие обязательного параметра
-        if (params.has('param') && params.get('param') === requiredParam) {
-            // Если параметр есть, показываем информацию
-            document.body.innerHTML = `
-                <h1>Затраты на поездку в Новосибирск на 7 дней</h1>
-                <h2>1. Авиабилеты туда и обратно</h2>
-                <ul>
-                    <li><strong>Стоимость:</strong> 11,656 - 13,970 рублей (в зависимости от даты и времени).</li>
-                    <li><strong>Источники:</strong> 
-                        <ul>
-                            <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
-                            <li><a href="https://uniticket.ru">UniTicket</a>.</li>
-                        </ul>
-                    </li>
-                </ul>
+    <header>
+        <h1>Бюджет на поездку в Новосибирск</h1>
+    </header>
+    <div class="container">
+        <script>
+            // Задаем обязательный параметр
+            const requiredParam = '1A!@#bC$%^dE&*()FgHiJkLmNoPqRsTuVwXyZ';
+            
+            // Получаем параметры из URL
+            const params = new URLSearchParams(window.location.search);
+            
+            // Проверяем наличие обязательного параметра
+            if (params.has('param') && params.get('param') === requiredParam) {
+                // Если параметр есть, показываем информацию
+                document.body.innerHTML += `
+                    <h2>1. Авиабилеты туда и обратно</h2>
+                    <ul>
+                        <li><strong>Стоимость:</strong> 20,033 - 21291 рублей (1-7 ноября).</li>
+                        <li><strong>Источники:</strong> 
+                            <ul>
+                                <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
+                                <li><a href="https://uniticket.ru">UniTicket</a>.</li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                <h2>2. Аренда жилья</h2>
-                <ul>
-                    <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
-                    <li><strong>Источники:</strong> 
-                        <ul>
-                            <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
-                            <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
-                        </ul>
-                    </li>
-                </ul>
+                    <h2>2. Аренда жилья</h2>
+                    <ul>
+                        <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
+                        <li><strong>Источники:</strong> 
+                            <ul>
+                                <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
+                                <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                <h2>3. Развлечения</h2>
-                <ul>
-                    <li><strong>Общая стоимость:</strong> 1,900 рублей (за три активности).</li>
-                    <li>Посещение зоопарка: 500 рублей.</li>
-                    <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
-                    <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
-                    <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
-                </ul>
+                    <h2>3. Развлечения</h2>
+                    <ul>
+                        <li><strong>Общая стоимость:</strong> 1,900 рублей (за три активности).</li>
+                        <li>Посещение зоопарка: 500 рублей.</li>
+                        <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
+                        <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
+                        <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
+                    </ul>
 
-                <h2>4. Рестораны</h2>
-                <ul>
-                    <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
-                    <li><strong>Источники:</strong> 
-                        <ul>
-                            <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
-                            <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
-                            <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
-                        </ul>
-                    </li>
-                </ul>
+                    <h2>4. Рестораны</h2>
+                    <ul>
+                        <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
+                        <li><strong>Источники:</strong> 
+                            <ul>
+                                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
+                                <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
+                                <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                <h2>Общая сумма затрат:</h2>
-                <ul>
-                    <li><strong>Авиабилеты:</strong> 13,000 рублей (в среднем).</li>
-                    <li><strong>Жильё:</strong> 35,000 рублей.</li>
-                    <li><strong>Развлечения:</strong> 1,900 рублей.</li>
-                    <li><strong>Рестораны:</strong> 21,000 рублей.</li>
-                </ul>
+                    <h2>Общая сумма затрат:</h2>
+                    <ul>
+                        <li><strong>Авиабилеты:</strong> 20,000 рублей (в среднем).</li>
+                        <li><strong>Жильё:</strong> 35,000 рублей.</li>
+                        <li><strong>Развлечения:</strong> 1,900 рублей.</li>
+                        <li><strong>Рестораны:</strong> 21,000 рублей.</li>
+                    </ul>
 
-                <h2 class="total">Итого: 70,900 рублей на 7 дней.</h2>
+                    <h2 class="total">Итого: 77,900 рублей на 7 дней.</h2>
 
-            `;
-        } else {
-            // Если параметра нет или он неверный, выводим сообщение об ошибке
-            document.body.innerHTML = '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
-        }
-    </script>
+                `;
+            } else {
+                // Если параметра нет или он неверный, выводим сообщение об ошибке
+                document.body.innerHTML += '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
+            }
+        </script>
+    </div>
+    <footer>
+        <p>&copy; 2024. Все права защищены.</p>
+    </footer>
 </body>
 </html>
