@@ -53,7 +53,7 @@
         const params = new URLSearchParams(window.location.search);
         
         // Проверяем наличие обязательного параметра
-        if (params.has(requiredParam)) {
+        if (params.has('param') && params.get('param') === encodeURIComponent(requiredParam)) {
             // Если параметр есть, показываем информацию
             document.body.innerHTML = `
                 <h1>Затраты на поездку в Новосибирск на 7 дней</h1>
@@ -109,10 +109,10 @@
                 </ul>
 
                 <h2 class="total">Итого: 70,900 рублей на 7 дней.</h2>
-                
+
             `;
         } else {
-            // Если параметра нет, выводим сообщение об ошибке
+            // Если параметра нет или он неверный, выводим сообщение об ошибке
             document.body.innerHTML = '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
         }
     </script>
