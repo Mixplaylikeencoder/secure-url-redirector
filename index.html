@@ -10,76 +10,94 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f4f6;
+            background-color: #f0f0f5;
+            color: #333;
         }
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 30px 0;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         h1 {
+            font-size: 3em;
             margin: 0;
-            font-size: 2.5em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-            margin-top: 20px;
+            font-size: 1.8em;
+            color: #0056b3;
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
         }
         ul {
-            margin: 0;
+            list-style: none;
             padding: 0;
-            list-style-type: none;
         }
         li {
-            background: #e9ecef;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
+            background-color: #f9f9fb;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid #0056b3;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: relative;
         }
-        li:before {
-            content: "";
+        li::before {
+            content: '\f005';
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #ffc107;
             position: absolute;
-            left: -10px;
+            left: -30px;
             top: 50%;
             transform: translateY(-50%);
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: #007bff;
+            font-size: 20px;
+        }
+        li strong {
+            color: #d9534f;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .total {
-            font-weight: bold;
-            color: #d9534f;
-            font-size: 1.5em;
+            font-size: 2em;
+            color: #28a745;
+            margin-top: 30px;
         }
         .error {
-            color: red;
+            color: #ff0000;
             font-weight: bold;
             text-align: center;
-            font-size: 1.5em;
             margin-top: 50px;
+            font-size: 1.5em;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 50px;
             font-size: 0.9em;
-            background-color: #f1f1f1;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -89,23 +107,18 @@
     </header>
     <div class="container">
         <script>
-            // Задаем обязательный параметр
             const requiredParam = '1A!@#bC$%^dE&*()FgHiJkLmNoPqRsTuVwXyZ';
-            
-            // Получаем параметры из URL
             const params = new URLSearchParams(window.location.search);
-            
-            // Проверяем наличие обязательного параметра
+
             if (params.has('param') && params.get('param') === requiredParam) {
-                // Если параметр есть, показываем информацию
                 document.body.innerHTML += `
                     <h2>1. Авиабилеты туда и обратно</h2>
                     <ul>
                         <li><strong>Стоимость:</strong> 20,033 - 21,291 рублей (1-7 ноября).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://www.aviasales.ru" target="_blank">Aviasales</a>.</li>
-                                <li><a href="https://uniticket.ru" target="_blank">UniTicket</a>.</li>
+                                <li><a href="https://www.aviasales.ru" target="_blank">Aviasales</a></li>
+                                <li><a href="https://uniticket.ru" target="_blank">UniTicket</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -115,8 +128,8 @@
                         <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://novosibirsk.cian.ru" target="_blank">Cian</a>.</li>
-                                <li><a href="https://onrealt.ru" target="_blank">onrealt.ru</a>.</li>
+                                <li><a href="https://novosibirsk.cian.ru" target="_blank">Cian</a></li>
+                                <li><a href="https://onrealt.ru" target="_blank">onrealt.ru</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -135,9 +148,9 @@
                         <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/" target="_blank">Афиша</a>.</li>
-                                <li><a href="https://2gis.ru/novosibirsk" target="_blank">2ГИС</a>.</li>
-                                <li><a href="https://nsk.resto.ru" target="_blank">Resto.ru</a>.</li>
+                                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/" target="_blank">Афиша</a></li>
+                                <li><a href="https://2gis.ru/novosibirsk" target="_blank">2ГИС</a></li>
+                                <li><a href="https://nsk.resto.ru" target="_blank">Resto.ru</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -151,10 +164,8 @@
                     </ul>
 
                     <h2 class="total">Итого: 77,900 рублей на 7 дней.</h2>
-
                 `;
             } else {
-                // Если параметра нет или он неверный, выводим сообщение об ошибке
                 document.body.innerHTML += '<h1 class="error">Ошибка!</h1><p class="error">Недостаточно параметров для доступа к сайту.</p>';
             }
         </script>
