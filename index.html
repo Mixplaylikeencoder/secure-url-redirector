@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Затраты на поездку в Новосибирск</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e9ecef;
+            background-color: #f2f4f6;
         }
         header {
             background-color: #007bff;
             color: white;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
         h1 {
             margin: 0;
             font-size: 2.5em;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
             color: #007bff;
@@ -34,11 +43,22 @@
             list-style-type: none;
         }
         li {
-            background: #ffffff;
+            background: #e9ecef;
             margin: 10px 0;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        li:before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #007bff;
         }
         .total {
             font-weight: bold;
@@ -61,14 +81,6 @@
             bottom: 0;
             width: 100%;
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -89,11 +101,11 @@
                 document.body.innerHTML += `
                     <h2>1. Авиабилеты туда и обратно</h2>
                     <ul>
-                        <li><strong>Стоимость:</strong> 20,033 - 21291 рублей (1-7 ноября).</li>
+                        <li><strong>Стоимость:</strong> 20,033 - 21,291 рублей (1-7 ноября).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://www.aviasales.ru">Aviasales</a>.</li>
-                                <li><a href="https://uniticket.ru">UniTicket</a>.</li>
+                                <li><a href="https://www.aviasales.ru" target="_blank">Aviasales</a>.</li>
+                                <li><a href="https://uniticket.ru" target="_blank">UniTicket</a>.</li>
                             </ul>
                         </li>
                     </ul>
@@ -103,8 +115,8 @@
                         <li><strong>Стоимость:</strong> 35,000 рублей за 7 дней (однокомнатная квартира).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://novosibirsk.cian.ru">Cian</a>.</li>
-                                <li><a href="https://onrealt.ru">onrealt.ru</a>.</li>
+                                <li><a href="https://novosibirsk.cian.ru" target="_blank">Cian</a>.</li>
+                                <li><a href="https://onrealt.ru" target="_blank">onrealt.ru</a>.</li>
                             </ul>
                         </li>
                     </ul>
@@ -115,7 +127,7 @@
                         <li>Посещение зоопарка: 500 рублей.</li>
                         <li>Экскурсия в музей "Сибирская берлога": 400 рублей.</li>
                         <li>Прогулка на катере по реке Обь: 1000 рублей.</li>
-                        <li><strong>Источники:</strong> <a href="https://zoonovosib.ru">Справка о Новосибирском зоопарке</a>.</li>
+                        <li><strong>Источники:</strong> <a href="https://zoonovosib.ru" target="_blank">Справка о Новосибирском зоопарке</a>.</li>
                     </ul>
 
                     <h2>4. Рестораны</h2>
@@ -123,9 +135,9 @@
                         <li><strong>Общая стоимость:</strong> 21,000 рублей за неделю (три приема пищи в день, средний чек 1000-1500 рублей).</li>
                         <li><strong>Источники:</strong> 
                             <ul>
-                                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/">Афиша</a>.</li>
-                                <li><a href="https://2gis.ru/novosibirsk">2ГИС</a>.</li>
-                                <li><a href="https://nsk.resto.ru">Resto.ru</a>.</li>
+                                <li><a href="https://www.afisha.ru/novosibirsk/restaurants/restaurant_list/1700-3000/" target="_blank">Афиша</a>.</li>
+                                <li><a href="https://2gis.ru/novosibirsk" target="_blank">2ГИС</a>.</li>
+                                <li><a href="https://nsk.resto.ru" target="_blank">Resto.ru</a>.</li>
                             </ul>
                         </li>
                     </ul>
